@@ -84,7 +84,7 @@ if __name__ == "__main__":
             if ai.text=="ERROR":
                 res="Sorry, come again?"
             else:
-                chat = nlp(transformers.Conversation(ai.text), pad_token_id=50256)
+                chat = nlp(transformers.Conversation(ai.text))
                 res = str(chat)
                 res = res[res.find("bot >> ")+6:].strip()
 
