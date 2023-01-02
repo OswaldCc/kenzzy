@@ -5,12 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/localStorage.js' %}"></script>
+   
     <title>Document</title>
+ 
 </head>
-<body>
-    
-    <div class="top">
-<p>Hello </p>
-    </div>
+<body>  
+    <form action="{% url 'my_view'%}" method="post">
+        {% csrf_token %}
+    <input type="text" name="input_data" id="'rI">
+    <input type="submit" value="send" >
+    </form>
+
+    <p id="you">
+        {{initial_input}}
+    </p>
+  
+       <p>
+            {% if gpt3_output %}
+            {{ gpt3_output }}
+          {% else %}
+            {{ kenzzydialogpt }}
+          {% endif %}                 
+</p>  
+     
+        
+  
+ 
+</div>
+<script>
+    saveInitialInput();
+    getInitialInput();
+  </script>
 </body>
 </html>
