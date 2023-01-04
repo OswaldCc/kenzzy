@@ -8,19 +8,17 @@ def my_view(request):
     if request.method == 'GET':
         return render(request, 'index.html')
     elif request.method == 'POST':
-        input_data = request.POST['input_data']
+        input_data = request.POST['input']
         ex=True
         while ex: 
                 if (len(input_data)>17):
-                    kenzzygpt3_output=kenzzygpt3(input_data)
-                    kenzzydialogpt_output=None
+                    output=kenzzygpt3(input_data)
                     ex=False
                 else:
-                    kenzzydialogpt_output=kenzzydialogpt(input_data)
-                    kenzzygpt3_output=None
+                    output=kenzzydialogpt(input_data)
                     ex=False
                 
-        return render(request, 'index.html', {'gpt3_output':kenzzygpt3_output,'kenzzydialogpt':kenzzydialogpt_output,'initial_input':input_data})
+        return render(request, 'index.html', {'gpt3_output':  output, 'input':input_data})
        
 
 

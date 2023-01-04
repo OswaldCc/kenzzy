@@ -4,7 +4,7 @@ import openai
 import os
 import numpy as np
 
-openai.api_key = "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"
+openai.api_key = "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"
 start_sequence = "\nKenzzy:"
 restart_sequence = "\n\nPerson:"
 session_prompt_large = """
