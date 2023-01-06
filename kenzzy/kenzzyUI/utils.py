@@ -1,10 +1,9 @@
 
-import transformers
 import openai
 import os
 import numpy as np
 
-openai.api_key = "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"
+openai.api_key = "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"
 start_sequence = "\nKenzzy:"
 restart_sequence = "\n\nPerson:"
 session_prompt_large = """
@@ -166,9 +165,9 @@ Kenzzy
         It's important to note that these population figures can vary depending on the definition of "city" and the boundaries used to define the urban area.
 
 """ 
-def kenzzygpt3(question):
+def kenzzygpt3(question,chat=None):
     completion = openai.Completion()
-    prompt_text = f'{session_prompt_large}{restart_sequence}: {question}{start_sequence}:'
+    prompt_text = f'{session_prompt_large}{chat}{restart_sequence}: {question}{start_sequence}:'
     response = openai.Completion.create(
       engine="text-davinci-003",
       prompt=prompt_text,
@@ -180,9 +179,9 @@ def kenzzygpt3(question):
     return str(story)
     
 
-def kenzzydialogpt(question):
+def kenzzydialogpt(question,chat=None):
     completion = openai.Completion()
-    prompt_text = f'{session_prompt_medium}{restart_sequence}: {question}{start_sequence}:'
+    prompt_text = f'{session_prompt_medium}{chat}{restart_sequence}: {question}{start_sequence}:'
     response = openai.Completion.create(
       engine="text-davinci-002",
       prompt=prompt_text,
@@ -194,6 +193,8 @@ def kenzzydialogpt(question):
     return str(story)
         
   
+def append_interaction_to_chat_log(question, answer):
+  return f'\n\nPerson: {question}\nKenzzy: {answer}\n'
 
-        
+     
 
