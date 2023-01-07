@@ -1,37 +1,19 @@
 
-function saveChat(chat){
-let counter=localStorage.getItem('counter') || 0;
-localStorage.setItem(counter,chat);
-localStorage.setItem('counter', ++counter);
+function saveChat(chatDiv){
+let chatDivs= JSON.parse(localStorage.getItem('chatsDiv')) || [];
+chatDivs.push(chatDiv)
+localStorage.setItem('chatsDiv',JSON.stringify(chatDivs));
+
  }
 
- function getChats(){
-  const keys=Array.from(Object.keys(localStorage)).sort((a,b)=>a-b);
-  const chats=[];
-  for (const key of keys){
-    if (key!=='counter'&& key!=='second_counter'){
-      const chat=localStorage.getItem(key);
-      chats.push(chat);
-      filteredChats=chats.filter(function(chat){
-        return !chat.includes(`Person:`)
-      })   
-      
-    }
-  }
-  return filteredChats
-  }
-  function getChatsImproved() {
-    const keys = Array.from(Object.keys(localStorage).sort((a, b) => a- b));
-    const chats = keys
-      .filter(key => key !== 'counter' && key !== 'second_counter')
-      .map(key => localStorage.getItem(key))
-      .filter(chat => !chat.includes('Person:'))
-      .sort((a, b) => b- a)
+function getChats(){
+  let chatDivs = JSON.parse(localStorage.getItem('chatsDiv')) || [];
+  return chatDivs;
+}
+
   
-    return chats;
-  }
  function appendChats(){
-  const chats=getChatsImproved();
+  const chats=getChats();
   const parentDiv=document.getElementById('conv');
   chats.forEach(chat=>{
     const div=document.createElement('div');
@@ -40,29 +22,17 @@ localStorage.setItem('counter', ++counter);
   })
  }
 
- function saveChatHistory(chats){
-  let counter=localStorage.getItem('counter') || 0;
-  localStorage.setItem(counter,chats);
-  localStorage.setItem('second_counter', ++counter);
+ function saveChatHistory(chat){
+  let chats = JSON.parse(localStorage.getItem('chats')) || [];
+  chats.push(chat)
+  localStorage.setItem('chats',JSON.stringify(chats));
    }
 
-function getChatHistory(){
-    const keys=Array.from(Object.keys(localStorage)).sort((a,b)=>a-b);
-    const history=[];
-    for (const key of keys){
-      if (key!=='counter'&& key!=='second_counter'){
-        const chat=localStorage.getItem(key);
-        history.push(chat);
-        filteredHistory=history.filter(function(chat){
-          return chat.includes(`Person:`)
-        })   
-        
-      }
-    }
-    return filteredHistory
-    }
-
-
+   function getChatHistory(){
+    let chats = JSON.parse(localStorage.getItem('chats')) || [];
+    return chats;
+  }
+  
 function addChatHistoryToForm(){
     const chats=getChatHistory();
     const parentDiv=document.getElementById('saved_chats');

@@ -2,8 +2,12 @@
 import openai
 import os
 import numpy as np
+from dotenv import load_dotenv
 
-openai.api_key = "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"
+load_dotenv()
+
+openai.api_key = os.getenv('API_KEY')
+
 start_sequence = "\nKenzzy:"
 restart_sequence = "\n\nPerson:"
 session_prompt_large = """
