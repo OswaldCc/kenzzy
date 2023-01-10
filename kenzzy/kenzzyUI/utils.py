@@ -178,6 +178,7 @@ def kenzzygpt3(question,chat=None):
       temperature=0.7,
       max_tokens=320,
       top_p=1,
+  
     )
     story = response['choices'][0]['text']
     return str(story)
@@ -192,6 +193,7 @@ def kenzzydialogpt(question,chat=None):
       temperature=0.9,
       max_tokens=320,
       top_p=1,
+  
     )
     story = response['choices'][0]['text']
     return str(story)

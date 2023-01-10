@@ -4,9 +4,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-   <script src="{% static 'js/localStorage.js' %}"></script>
-   
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <script src="{% static 'js/localStorage.js' %}"></script>
     <title>Document</title>
  
 </head>
@@ -15,16 +14,17 @@
 <div class="requestForm">
     <form action="{% url 'my_view'%}" method="post" id="form">
       {% csrf_token %}
-  <input type="text" id="'rI" name="input">
+  <input type="text" id="rI" name="input">
   <input type="hidden" name="chat_history" id="saved_chats">
-  <input type="submit" value="send" >
+  <input type="submit" value="send" id="submitButton">
   </form>
 </div>      
 <div class="conversation" id="conv">
 
 </div>
-
-<p></p>
+<div class="errors">
+  <p id="error">{{error}}</p>
+</div>
 </body>
 
 <script>
@@ -53,6 +53,8 @@ saveChatHistory(chats_to_save)
 addChatHistoryToForm()
 
 } 
+
+
 
   </script>
 </body>
