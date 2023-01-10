@@ -1,6 +1,36 @@
-#error{
-    color:red
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+*{
+    box-sizing: border-box;
 }
-form {
-    display: inline;
-  }
+
+body{
+    font-family:"Roboto", sans-serif;
+    font-weight: 400;
+}
+
+h1,h2,h3{
+    font-family:"Roboto",sans-serif;
+    font-weight: 700;
+}
+
+.requestForm{
+    position: fixed;
+    margin-left:30%;
+    bottom:65px;
+    border-radius: 25px;
+    padding: 25px; 
+}
+
+
+textarea{
+    width: 600px;
+    border: solid 1px;
+    border-radius: 4px;
+    padding: 12px 20px;
+    overflow: auto;
+    min-height: 40px;
+    max-height: 130px;
+}
+.error{
+    color:rgba(255, 0, 55, 0.952)
+}

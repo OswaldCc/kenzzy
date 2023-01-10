@@ -10,11 +10,11 @@
  
 </head>
 <body>
-
-<div class="requestForm">
+<div class="container">
+  <div class="requestForm">
     <form action="{% url 'my_view'%}" method="post" id="form">
       {% csrf_token %}
-  <input type="text" id="rI" name="input">
+  <textarea id="rI" name="input" class="formInput" wrap="soft" rows="1" oninput="textAreaAdjust(this)"></textarea>
   <input type="hidden" name="chat_history" id="saved_chats">
   <input type="submit" value="send" id="submitButton">
   </form>
@@ -25,6 +25,8 @@
 <div class="errors">
   <p id="error">{{error}}</p>
 </div>
+</div>
+
 </body>
 
 <script>
@@ -53,6 +55,11 @@ saveChatHistory(chats_to_save)
 addChatHistoryToForm()
 
 } 
+function textAreaAdjust(element) {
+  element.style.height = "1px";
+  element.style.height = (10+element.scrollHeight)+"px";
+}
+
 
 
 
