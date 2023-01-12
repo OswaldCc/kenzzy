@@ -5,26 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="{% static 'js/localStorage.js' %}"></script>
+    
     <title>Document</title>
  
 </head>
 <body>
 <div class="container">
-  <div class="requestForm">
-    <form action="{% url 'my_view'%}" method="post" id="form">
-      {% csrf_token %}
-  <textarea id="rI" name="input" class="formInput" wrap="soft" rows="1" oninput="textAreaAdjust(this)"></textarea>
-  <input type="hidden" name="chat_history" id="saved_chats">
-  <input type="submit" value="send" id="submitButton">
-  </form>
-</div>      
+
+<img src="{% static 'images/kenzzy.png' %}" alt="kenzzy" id="kenzzyImg"> 
+<div class="kenzzyMessage" id="message">
+  <p>Hello! I am Kenzzy how can I help? A famous quote :)</p>
+</div>
+<div id="quote"></div>
 <div class="conversation" id="conv">
 
 </div>
 <div class="errors">
   <p id="error">{{error}}</p>
 </div>
+<div class="requestForm">
+  <form action="{% url 'my_view'%}" method="post" id="form">
+    {% csrf_token %}
+<textarea id="rI" name="input" class="formInput" wrap="soft" rows="3" oninput="textAreaAdjust(this)"  style="font-size: 15px;" ></textarea>
+<input type="hidden" name="chat_history" id="saved_chats">
+<button type="submit" class="sendBtn"> <i class="material-icons"  style="font-size:18px;">send</i></button>
+</form>
+</div>      
 </div>
 
 </body>
@@ -32,21 +40,21 @@
 <script>
 
 chat=`
-<div class="input">
-<p> {{input}} </p>
+<div>
+<p class="input"> {{input}} </p>
 
 </div>
-<div class="output">
-<p> {{gpt3_output}} </p>
+<div>
+<p class="output"> {{gpt3_output}} </p>
 </div>
 `
 chats_to_save=`{{chat_history}}`
 
-if(chat!==`<div class="input">
-<p></p>
+if(chat!==`<div>
+<p class="input"></p>
 </div>
-<div class="output">
-<p></p>
+<div>
+<p class="output"></p>
 </div>`){
 saveChat(chat)
 appendChats()
@@ -59,10 +67,7 @@ function textAreaAdjust(element) {
   element.style.height = "1px";
   element.style.height = (10+element.scrollHeight)+"px";
 }
-
-
-
-
+displayRandomQuote()
   </script>
 </body>
 </html>

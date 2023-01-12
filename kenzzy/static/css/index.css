@@ -1,11 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-*{
-    box-sizing: border-box;
-}
 
 body{
     font-family:"Roboto", sans-serif;
-    font-weight: 400;
+    font-weight: 500;
+    background-color: #1f272c;
+    color: white;
 }
 
 h1,h2,h3{
@@ -15,22 +14,68 @@ h1,h2,h3{
 
 .requestForm{
     position: fixed;
-    margin-left:30%;
-    bottom:65px;
-    border-radius: 25px;
-    padding: 25px; 
+    width: 94%;
+    margin-left:16%;
+    bottom:5%;
+    margin-top: 4%;
+ 
 }
 
 
 textarea{
-    width: 600px;
-    border: solid 1px;
+    width: 79%;
+    color:white;
+    border: solid 1px #3f4b53;
     border-radius: 4px;
-    padding: 12px 20px;
     overflow: auto;
-    min-height: 40px;
+    min-height: 45px;
     max-height: 130px;
+    background-color:#3f4b53;
+    margin-top: 4%;
+    font-family:"Roboto", sans-serif;
+    font-weight: 300;
 }
 .error{
     color:rgba(255, 0, 55, 0.952)
+}
+button{
+    border: none; 
+    background-color:  #1f272c;
+}
+textarea:focus {
+    border: 2px solid #3f4b53;
+    outline: none;
+  }
+.conversation{
+    margin-left:18%; 
+    margin-right:23%;  
+    margin-bottom:7%;      
+}
+.errors{
+    margin-left:16%;
+    margin-bottom:3%;           
+}
+
+.container{
+    max-height: 93%;
+    overflow:auto;   
+}
+.output{
+    color: rgb(185, 185, 169);
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+img{
+    width:30%;
+    height: auto;
+    margin-left:36%;
+}
+.kenzzyMessage{
+    margin-left:41%; 
+    color: rgb(185, 185, 169);
+    font-family: 'Raleway', sans-serif;
+}
+.quotes{
+    margin-left:37%;
+    margin-right:25%;     
 }
