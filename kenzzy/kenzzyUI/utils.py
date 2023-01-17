@@ -249,7 +249,7 @@ def kenzzygpt3(quote,question,chat=None):
     response = openai.Completion.create(
       engine="text-davinci-003",
       prompt=prompt_text,
-      temperature=0.8,
+      temperature=0.7,
       max_tokens=320,
     )
     story = response['choices'][0]['text']
@@ -262,7 +262,7 @@ def kenzzydialogpt(quote,question,chat=None):
     response = openai.Completion.create(
       engine="text-curie-001",
       prompt=prompt_text,
-      temperature=0.9,
+      temperature=0.7,
       max_tokens=320,
     )
     story = response['choices'][0]['text']

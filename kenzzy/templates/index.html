@@ -16,7 +16,7 @@
 
 <img src="{% static 'images/kenzzy.png' %}" alt="kenzzy" id="kenzzyImg" class="kenzzyImg"> 
 <div class="kenzzyMessage" id="message">
-  <p>Hello! I am Kenzzy how can I help? A famous quote :)</p>
+  <p class="kenzzyText">Hello! I am Kenzzy how can I help? A famous quote :)</p>
 </div>
 <div id="quote" class="quotes"></div>
 <div class="conversation" id="conv">
@@ -38,6 +38,18 @@
 </body>
 
 <script>
+
+chat=`
+<div>
+<p class="input"> {{input}} </p>
+
+</div>
+<div>
+<p class="output"> {{gpt3_output}} </p>
+</div>
+`
+chats_to_save=`{{chat_history}}`
+
 function textAreaAdjust(element) {
   element.style.height = "1px";
   element.style.height = (10+element.scrollHeight)+"px";
@@ -59,30 +71,10 @@ function addQuoteToForm(){
       parentDiv.value=quote;
     })
 }
-
-
-chat=`
-<div>
-<p class="input"> {{input}} </p>
-
-</div>
-<div>
-<p class="output"> {{gpt3_output}} </p>
-</div>
-`
-chats_to_save=`{{chat_history}}`
-if(chat!==`<div>
-<p class="input"></p>
-</div>
-<div>
-<p class="output"></p>
-</div>`){
 saveChat(chat)
 appendChats()
-
 saveChatHistory(chats_to_save)
 addChatHistoryToForm()
-} 
 displayRandomQuote();
 saveQuote()
 addQuoteToForm()

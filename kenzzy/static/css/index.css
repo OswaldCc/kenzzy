@@ -68,24 +68,56 @@ textarea:focus {
 img{
     width:30%;
     height: auto;
-    margin-left:36%;
+    margin-left:39%;
 }
 .kenzzyMessage{
     margin-left:41%; 
     color: rgb(185, 185, 169);
     font-family: 'Raleway', sans-serif;
 }
-.quote{
-    margin-left:37%;   
+.quotes{
+    margin-left:23%;   
+    margin-right: 12%;
 }
-@media (max-width: 359px) {
-    img {
+@media screen and (max-width: 913px) {
+    .kenzzyImg{
       display: none;
     }
-    .kenzzyMessage{
+    .kenzzyText{
         display: none;  
     }
     .quotes{
         display: none;    
     }
   }
+
+  @media screen and (max-width: 821px) {
+    .requestForm{
+        position: fixed;
+        width: 94%;
+        margin-left:10%;
+        bottom:5%;
+        margin-top: 4%;
+     
+    }
+  }
+  @media screen and (width: 1024px) and (height: 600px) {
+  
+    .kenzzyMessage{
+        margin-left:35%; 
+        color: rgb(185, 185, 169);
+        font-family: 'Raleway', sans-serif;
+    }
+    .quotes{
+        margin-left:19%;   
+        margin-right: 10%; 
+    }
+}
+@media screen and (width: 1280px) and (height: 800px) {
+  
+    img{
+        width:30%;
+        height: auto;
+        margin-left:39%;
+    }
+}

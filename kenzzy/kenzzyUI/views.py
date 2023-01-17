@@ -25,8 +25,11 @@ def my_view(request):
             else:
                 return render(request, 'index.html', {'error': """I didn't get that"""+chr(0x1F61E)})
         except Exception as e:
-            # you can log the error message here using logger.exception(e) or print it to the console
-            return render(request, 'index.html', {'error':error})
+            try:
+                output=kenzzygpt3(quote,input_data,chat_data)
+                chat=append_interaction_to_chat_log(input_data,output)
+            except Exception as e:
+                return render(request, 'index.html', {'error':error})
         return render(request, 'index.html', {'gpt3_output':output, 'input':input_data,'chat_history':chat})
 
 
