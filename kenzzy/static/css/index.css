@@ -35,9 +35,7 @@ textarea{
     font-family:"Roboto", sans-serif;
     font-weight: 300;
 }
-.error{
-    color:rgba(255, 0, 55, 0.952)
-}
+
 button{
     border: none; 
     background-color:  #1f272c;
@@ -49,11 +47,11 @@ textarea:focus {
 .conversation{
     margin-left:18%; 
     margin-right:23%;  
-    margin-bottom:7%;      
+    margin-bottom:5.5%;      
 }
 .errors{
-    margin-left:16%;
-    margin-bottom:3%;           
+    margin-left:23%;
+    margin-bottom:1%;           
 }
 
 .container{

@@ -250,7 +250,7 @@ def kenzzygpt3(quote,question,chat=None):
       engine="text-davinci-003",
       prompt=prompt_text,
       temperature=0.7,
-      max_tokens=400,
+      max_tokens=350,
     )
     story = response['choices'][0]['text']
     return str(story)
@@ -263,7 +263,7 @@ def kenzzydialogpt(quote,question,chat=None):
       engine="text-curie-001",
       prompt=prompt_text,
       temperature=0.7,
-      max_tokens=400,
+      max_tokens=350,
     )
     story = response['choices'][0]['text']
     return str(story)
