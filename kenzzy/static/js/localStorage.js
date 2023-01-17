@@ -31,16 +31,16 @@ function getChats(){
   }
  }
 
- function saveChatHistory(chat){
+function saveChatHistory(chat){
   let chats = JSON.parse(sessionStorage.getItem('chats')) || [];
   chats.push(chat)
   sessionStorage.setItem('chats',JSON.stringify(chats));
    }
 
-   function getChatHistory(){
-    let chats = JSON.parse(sessionStorage.getItem('chats')) || [];
-    return chats;
-  }
+function getChatHistory(){
+let chats = JSON.parse(sessionStorage.getItem('chats')) || [];
+return chats;
+}
   
 function addChatHistoryToForm(){
     const chats=getChatHistory();
@@ -53,6 +53,7 @@ function addChatHistoryToForm(){
 
 function displayRandomQuote() {
   // Create an array of quotes
+  
   let quotes = [
     "Be the change you wish to see in the world. - Mahatma Gandhi",
     "The only limit to our realization of tomorrow will be our doubts of today. - Franklin D. Roosevelt",
@@ -81,6 +82,4 @@ function displayRandomQuote() {
   div.className = 'quotes'
   div.innerHTML= `${randomQuote}`
   parentDiv.appendChild(div);
-   
-
-}
+};

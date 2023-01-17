@@ -3,7 +3,7 @@
 body{
     font-family:"Roboto", sans-serif;
     font-weight: 500;
-    background-color: #1f272c;
+    background-color:#1f272c;
     color: white;
 }
 
@@ -75,7 +75,17 @@ img{
     color: rgb(185, 185, 169);
     font-family: 'Raleway', sans-serif;
 }
-.quotes{
-    margin-left:37%;
-    margin-right:25%;     
+.quote{
+    margin-left:37%;   
 }
+@media (max-width: 359px) {
+    img {
+      display: none;
+    }
+    .kenzzyMessage{
+        display: none;  
+    }
+    .quotes{
+        display: none;    
+    }
+  }

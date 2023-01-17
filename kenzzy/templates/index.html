@@ -14,13 +14,12 @@
 <body>
 <div class="container">
 
-<img src="{% static 'images/kenzzy.png' %}" alt="kenzzy" id="kenzzyImg"> 
+<img src="{% static 'images/kenzzy.png' %}" alt="kenzzy" id="kenzzyImg" class="kenzzyImg"> 
 <div class="kenzzyMessage" id="message">
   <p>Hello! I am Kenzzy how can I help? A famous quote :)</p>
 </div>
-<div id="quote"></div>
+<div id="quote" class="quotes"></div>
 <div class="conversation" id="conv">
-
 </div>
 <div class="errors">
   <p id="error">{{error}}</p>
@@ -30,6 +29,7 @@
     {% csrf_token %}
 <textarea id="rI" name="input" class="formInput" wrap="soft" rows="3" oninput="textAreaAdjust(this)"  style="font-size: 15px;" ></textarea>
 <input type="hidden" name="chat_history" id="saved_chats">
+<input type="hidden" name="famous_quote" id="saved_quote">
 <button type="submit" class="sendBtn"> <i class="material-icons"  style="font-size:18px;">send</i></button>
 </form>
 </div>      
@@ -38,6 +38,28 @@
 </body>
 
 <script>
+function textAreaAdjust(element) {
+  element.style.height = "1px";
+  element.style.height = (10+element.scrollHeight)+"px";
+}
+function saveQuote(){
+  let quote=document.getElementById('quote').innerText
+  let quotes = JSON.parse(sessionStorage.getItem('quotes')) || [];
+  quotes.push(quote)
+  sessionStorage.setItem('quotes',JSON.stringify(quotes));
+}
+function getQuotes(){
+    let quotes = JSON.parse(sessionStorage.getItem('quotes')) || [];
+    return quotes;
+}
+function addQuoteToForm(){
+    const quotes=getQuotes();
+    const parentDiv=document.getElementById('saved_quote');
+    quotes.forEach(quote=>{
+      parentDiv.value=quote;
+    })
+}
+
 
 chat=`
 <div>
@@ -49,7 +71,6 @@ chat=`
 </div>
 `
 chats_to_save=`{{chat_history}}`
-
 if(chat!==`<div>
 <p class="input"></p>
 </div>
@@ -61,13 +82,11 @@ appendChats()
 
 saveChatHistory(chats_to_save)
 addChatHistoryToForm()
-
 } 
-function textAreaAdjust(element) {
-  element.style.height = "1px";
-  element.style.height = (10+element.scrollHeight)+"px";
-}
-displayRandomQuote()
+displayRandomQuote();
+saveQuote()
+addQuoteToForm()
+
   </script>
 </body>
 </html>

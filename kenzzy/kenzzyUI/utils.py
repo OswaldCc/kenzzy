@@ -127,7 +127,43 @@ Kenzzy
         Keep in mind that detecting plagiarism can be a complex task, and no tool can guarantee 100% accuracy. It is important to use plagiarism checking tools
         as a way to identify potential issues, but always follow up with manual checking and verification to ensure the accuracy of your results.<br>
 \n\nPerson: thanks Kenzzy
-\nKenzzy: You're welcome! I'm glad I could help :) 
+\nKenzzy: You're welcome! I'm glad I could help :)
+Yes! Here is a poem with a hiphop vibe!
+        Verse 1:
+        I'm from the city where the streets are mean
+        Where dreams get crushed and hearts turn lean
+        But I won't let it break me, no way, no how
+        I'll rise above it and show 'em now
+
+        Chorus:
+        Cause I'm a warrior, and I'll fight the fight
+        I'll make my mark and shine so bright
+        And when they see me, they'll know my name
+        I'll be the one who played the game
+
+        Verse 2:
+        I've been knocked down, but I ain't stayin' there
+        I'll pick myself up, and I'll climb that stair
+        I'll make my own luck, and I'll make my own fate
+        I'll be the one to break through that gate
+
+        Chorus:
+        Cause I'm a warrior, and I'll fight the fight
+        I'll make my mark and shine so bright
+        And when they see me, they'll know my name
+        I'll be the one who played the game
+
+        Bridge:
+        I'll take the beat and make it mine
+        I'll make my own rhythm, and I'll make it shine
+        I'll take the mic and make 'em hear
+        I'll make my own story, and make it clear
+
+        Outro:
+        I'm from the city, but I won't stay
+        I'll make my mark, and I'll pave the way
+        For the next generation, to follow in my steps
+        And show the world, that they can be next. 
 """ 
 session_prompt_medium="""
 Kenzzy is an empathetic, observant , understanding and humble AI made by Samuel Kabati. She knows alot about psychiatry, having the breadth and depth of knowledge in 
@@ -168,10 +204,48 @@ Kenzzy
         It's important to note that these population figures can vary depending on the definition of "city" and the boundaries used to define the urban area.
 \n\nPerson: thanks Kenzzy
 \nKenzzy: You're welcome! I'm glad I could help :) 
+\n\nPerson:can you do something to make me feel better maybe a song or a poem?
+\nKenzzy: Yes! Here is a poem with a hiphop vibe!
+        Verse 1:
+        I'm from the city where the streets are mean
+        Where dreams get crushed and hearts turn lean
+        But I won't let it break me, no way, no how
+        I'll rise above it and show 'em now
+
+        Chorus:
+        Cause I'm a warrior, and I'll fight the fight
+        I'll make my mark and shine so bright
+        And when they see me, they'll know my name
+        I'll be the one who played the game
+
+        Verse 2:
+        I've been knocked down, but I ain't stayin' there
+        I'll pick myself up, and I'll climb that stair
+        I'll make my own luck, and I'll make my own fate
+        I'll be the one to break through that gate
+
+        Chorus:
+        Cause I'm a warrior, and I'll fight the fight
+        I'll make my mark and shine so bright
+        And when they see me, they'll know my name
+        I'll be the one who played the game
+
+        Bridge:
+        I'll take the beat and make it mine
+        I'll make my own rhythm, and I'll make it shine
+        I'll take the mic and make 'em hear
+        I'll make my own story, and make it clear
+
+        Outro:
+        I'm from the city, but I won't stay
+        I'll make my mark, and I'll pave the way
+        For the next generation, to follow in my steps
+        And show the world, that they can be next.
+
 """ 
-def kenzzygpt3(question,chat=None):
+def kenzzygpt3(quote,question,chat=None):
     completion = openai.Completion()
-    prompt_text = f'{session_prompt_large}{chat}{restart_sequence}: {question}{start_sequence}:'
+    prompt_text = f'{session_prompt_large}{quote}{chat}{restart_sequence}: {question}{start_sequence}:'
     response = openai.Completion.create(
       engine="text-davinci-003",
       prompt=prompt_text,
@@ -182,9 +256,9 @@ def kenzzygpt3(question,chat=None):
     return str(story)
     
 
-def kenzzydialogpt(question,chat=None):
+def kenzzydialogpt(quote,question,chat=None):
     completion = openai.Completion()
-    prompt_text = f'{session_prompt_medium}{chat}{restart_sequence}: {question}{start_sequence}:'
+    prompt_text = f'{session_prompt_medium}{start_sequence}{quote}{chat}{restart_sequence}: {question}{start_sequence}:'
     response = openai.Completion.create(
       engine="text-curie-001",
       prompt=prompt_text,

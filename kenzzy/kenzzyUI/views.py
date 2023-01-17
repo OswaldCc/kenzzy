@@ -13,13 +13,14 @@ def my_view(request):
         try:
             input_data = request.POST['input']
             chat_data=request.POST['chat_history']
+            quote=request.POST['famous_quote']
 
             if len(input_data)>1: 
                     if (len(input_data)>20):
-                        output=kenzzygpt3(input_data,chat_data)
+                        output=kenzzygpt3(quote,input_data,chat_data)
                         chat=append_interaction_to_chat_log(input_data,output)
                     else:
-                        output=kenzzydialogpt(input_data,chat_data)
+                        output=kenzzydialogpt(quote,input_data,chat_data)
                         chat=append_interaction_to_chat_log(input_data,output)
             else:
                 return render(request, 'index.html', {'error': """I didn't get that"""+chr(0x1F61E)})
