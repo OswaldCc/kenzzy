@@ -33,7 +33,7 @@ The app will start a local server on your machine. You can access the chatbot by
 
 ## Authors
 
-* **Samuel Kabati** - [Your GitHub](https://github.com/your-username)
+* **Samuel Kabati** - [OswaldCc](https://github.com/OswaldCc)
 
 ## License
 
