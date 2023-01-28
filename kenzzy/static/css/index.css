@@ -1,82 +1,107 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-body{
-    font-family:"Roboto", sans-serif;
-    font-weight: 500;
-    background-color:#1f272c;
-    color: white;
-}
-
+/* Change the font family and weight for all headings */
 h1,h2,h3{
-    font-family:"Roboto",sans-serif;
-    font-weight: 700;
+font-family:"Roboto",sans-serif;
+font-weight: 700;
 }
 
+/* Change the font family and weight for the body */
+body{
+font-family:"Roboto", sans-serif;
+font-weight: 500;
+background-color:#1f272c;
+color: white;
+}
+
+/* Position and style for the request form */
 .requestForm{
-    position: fixed;
-    width: 94%;
-    margin-left:16%;
-    bottom:5%;
-    margin-top: 4%;
- 
+position: fixed;
+width: 94%;
+margin-left:16%;
+bottom:5%;
+margin-top: 4%;
+
 }
 
-
+/* Style for the textarea */
 textarea{
-    width: 79%;
-    color:white;
-    border: solid 1px #3f4b53;
-    border-radius: 4px;
-    overflow: auto;
-    min-height: 45px;
-    max-height: 130px;
-    background-color:#3f4b53;
-    margin-top: 4%;
-    font-family:"Roboto", sans-serif;
-    font-weight: 300;
+width: 79%;
+color:white;
+border: solid 1px #3f4b53;
+border-radius: 4px;
+overflow: auto;
+min-height: 45px;
+max-height: 130px;
+background-color:#3f4b53;
+margin-top: 4%;
+font-family:"Roboto", sans-serif;
+font-weight: 300;
 }
 
+/* Style for the button */
 button{
-    border: none; 
-    background-color:  #1f272c;
-}
-textarea:focus {
-    border: 2px solid #3f4b53;
-    outline: none;
-  }
-.conversation{
-    margin-left:18%; 
-    margin-right:23%;  
-    margin-bottom:5.5%;      
-}
-.errors{
-    margin-left:23%;
-    margin-bottom:1%;           
+border: none;
+background-color: #1f272c;
 }
 
+/* Style for the textarea when it is focused */
+textarea:focus {
+border: 2px solid #3f4b53;
+outline: none;
+}
+
+/* Style for the conversation section */
+.conversation{
+margin-left:18%;
+margin-right:23%;
+margin-bottom:5.5%;
+}
+
+/* Style for the errors section */
+.errors{
+margin-left:23%;
+margin-bottom:1%;
+}
+
+/* Style for the container */
 .container{
-    max-height: 93%;
-    overflow:auto;   
+max-height: 93%;
+overflow:auto;
 }
+
+/* Style for the output */
 .output{
-    color: rgb(185, 185, 169);
-    margin-top: 5%;
-    margin-bottom: 5%;
+color: rgb(185, 185, 169);
+margin-top: 5%;
+margin-bottom: 5%;
 }
+
+/* Style for the image */
 img{
-    width:30%;
-    height: auto;
-    margin-left:39%;
+width:30%;
+height: auto;
+margin-left:39%;
 }
+
+/* Style for the kenzzy message */
 .kenzzyMessage{
-    margin-left:41%; 
-    color: rgb(185, 185, 169);
-    font-family: 'Raleway', sans-serif;
+margin-left:41%;
+color: rgb(185, 185, 169);
+font-family: 'Raleway', sans-serif;
 }
+
+/* Style for the quotes section */
 .quotes{
-    margin-left:23%;   
-    margin-right: 12%;
+margin-left:23%;
+margin-right: 12%;
 }
+
+
+.quotes{
+display: none;
+}
+/* Media query for screens smaller than 913px */
 @media screen and (max-width: 913px) {
     .kenzzyImg{
       display: none;
@@ -87,20 +112,21 @@ img{
     .quotes{
         display: none;    
     }
-  }
+}
 
-  @media screen and (max-width: 821px) {
+/* Media query for screens smaller than 821px */
+@media screen and (max-width: 821px) {
     .requestForm{
         position: fixed;
         width: 94%;
         margin-left:10%;
         bottom:5%;
         margin-top: 4%;
-     
     }
-  }
-  @media screen and (width: 1024px) and (height: 600px) {
-  
+}
+
+/* Media query for screens with width of 1024px and height of 600px */
+@media screen and (width: 1024px) and (height: 600px) {
     .kenzzyMessage{
         margin-left:35%; 
         color: rgb(185, 185, 169);
@@ -111,8 +137,8 @@ img{
         margin-right: 10%; 
     }
 }
+/* Media query for screens with width of 1280px and height of 800px */
 @media screen and (width: 1280px) and (height: 800px) {
-  
     img{
         width:30%;
         height: auto;

@@ -49,28 +49,6 @@ chat=`
 </div>
 `
 chats_to_save=`{{chat_history}}`
-
-function textAreaAdjust(element) {
-  element.style.height = "1px";
-  element.style.height = (10+element.scrollHeight)+"px";
-}
-function saveQuote(){
-  let quote=document.getElementById('quote').innerText
-  let quotes = JSON.parse(sessionStorage.getItem('quotes')) || [];
-  quotes.push(quote)
-  sessionStorage.setItem('quotes',JSON.stringify(quotes));
-}
-function getQuotes(){
-    let quotes = JSON.parse(sessionStorage.getItem('quotes')) || [];
-    return quotes;
-}
-function addQuoteToForm(){
-    const quotes=getQuotes();
-    const parentDiv=document.getElementById('saved_quote');
-    quotes.forEach(quote=>{
-      parentDiv.value=quote;
-    })
-}
 saveChat(chat)
 appendChats()
 saveChatHistory(chats_to_save)
