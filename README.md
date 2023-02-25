@@ -12,7 +12,7 @@ You will need to have Python installed on your machine. You will also need to si
 
 ### Installing
 
-1. Clone the repository git clone https://github.com/your-username/kenzzy.git
+1. Clone the repository git clone https://github.com/OswaldCc/kenzzy.git
 
 2. Install the Python dependencies
 
