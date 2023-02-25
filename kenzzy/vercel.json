@@ -2,7 +2,7 @@
     "builds": [{
         "src": "kenzzy/wsgi.py",
         "use": "@vercel/python",
-        "config": {"runtime": "python3.10" }
+        "config": { "maxLambdaSize": "80mb", "runtime": "python3.10" }
     }],
     "routes": [
         {
