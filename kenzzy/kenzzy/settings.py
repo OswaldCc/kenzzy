@@ -25,9 +25,9 @@ STATICFILES_DIRS = [
 SECRET_KEY = "django-insecure-pqu3m)^by78m0qrit9s(q1+-k2w^zb$wd7b5ss$i)@mg2*4=o6"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.vercel.app']
 
 
 # Application definition
