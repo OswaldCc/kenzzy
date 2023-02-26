@@ -25,9 +25,9 @@ STATICFILES_DIRS = [
 SECRET_KEY = "django-insecure-pqu3m)^by78m0qrit9s(q1+-k2w^zb$wd7b5ss$i)@mg2*4=o6"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app']
+ALLOWED_HOSTS = ['kenzzy-production.up.railway.app']
 
 
 # Application definition
