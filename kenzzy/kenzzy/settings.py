@@ -25,7 +25,7 @@ STATICFILES_DIRS = [
 SECRET_KEY = "django-insecure-pqu3m)^by78m0qrit9s(q1+-k2w^zb$wd7b5ss$i)@mg2*4=o6"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1','localhost','kenzzy-production.up.railway.app']
 
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     'whitenoise.runserver_nostatic',
+    'corsheaders',
     'kenzzyUI',
  
 ]
@@ -53,6 +54,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
+    'corsheaders.middleware.CorsMiddleware'
 ]
 
 ROOT_URLCONF = "kenzzy.urls"
@@ -127,3 +129,5 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+CSRF_TRUSTED_ORIGINS = ['https://kenzzy-production.up.railway.app']
