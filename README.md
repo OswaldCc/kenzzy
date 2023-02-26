@@ -37,4 +37,4 @@ The app will start a local server on your machine. You can access the chatbot by
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
