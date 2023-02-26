@@ -25,9 +25,9 @@ STATICFILES_DIRS = [
 SECRET_KEY = "django-insecure-pqu3m)^by78m0qrit9s(q1+-k2w^zb$wd7b5ss$i)@mg2*4=o6"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['kenzzy-production.up.railway.app']
+ALLOWED_HOSTS = ['127.0.0.1','localhost','kenzzy-production.up.railway.app']
 
 
 # Application definition
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    'whitenoise.runserver_nostatic',
     'kenzzyUI',
  
 ]
@@ -51,6 +52,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
 
 ROOT_URLCONF = "kenzzy.urls"
