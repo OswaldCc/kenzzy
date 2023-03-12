@@ -1,6 +1,6 @@
 # Kenzzy
 
-Kenzzy is a chatbot that uses OpenAI's GPT-3 to respond to user's questions and provide them with relevant information. The bot was developed using Python and JavaScript, and it makes API calls to the OpenAI API to generate responses. 
+Kenzzy is a chatbot that uses OpenAI's GPT-3 to respond to user's questions and provide them with relevant information. The bot was developed using Python and JavaScript, and it makes API calls to the OpenAI API to generate responses. This project was for educational purposes and illustration. A faster version coming soon. 
 
 ## Getting Started
 
